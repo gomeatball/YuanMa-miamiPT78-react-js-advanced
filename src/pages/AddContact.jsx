@@ -5,6 +5,7 @@
 // useGlobalReducer to save updated info 
 // post fetch data to API
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const AddContact = () => {
     const [contactName, setContactName] = useState("")
@@ -14,10 +15,14 @@ export const AddContact = () => {
 
     return (
     <>
+        <div className="AddContactTitle text-center">
+        <h1>Add a new contact</h1>
+        </div>
         <div className="row add-contact-row">
             <div className="col-2"></div>
             <div className="col-8">
               {/* <form className="contact-form"> */}
+              
                <div class="mb-3">
                   <label htmlFor="contactName" class="form-label">Full Name</label>
                   <input 
@@ -78,15 +83,20 @@ export const AddContact = () => {
                   value={contactAddress}
                   onChange={e => setContactAddress(e.target.value)}/>
                 </div>
+
                <button 
                   type="submit"
-                  className="btn btn-success"
+                  className="btn btn-primary w-100"
                   onClick={() => {}}>
-                Submit
+                Save
                </button>
+               <div>
+                  <Link to="/">Or get back to contacts</Link>
+               </div>
             </div>
             <div className="col-2"></div>
         </div>
+       
         </>
     );
 }

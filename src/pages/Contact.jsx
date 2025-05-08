@@ -11,6 +11,7 @@ import { useEffect, useReducer } from "react";
 import { Link } from "react-router-dom";
 import useGlobalReducer from "../hooks/useGlobalReducer";
 import { ContactCard } from "../components/ContactCard";
+import { Navbar } from "../components/Navbar";
 
 
 export const Contact = () => {
@@ -45,7 +46,8 @@ export const Contact = () => {
 
     return (
         <>
-       <div className="container">
+        <Navbar />
+       <div className="container mt-4">
         {
             !store && !store.contacts
             ?
@@ -54,6 +56,7 @@ export const Contact = () => {
             store.contacts.map((contact) => {
                 return (
                     <>
+
                  <div className="card" key={contact.id}>
                     <ContactCard 
                           name={contact.name}
@@ -61,8 +64,8 @@ export const Contact = () => {
                           phone={contact.phone}
                           email={contact.email}
                       />
-                      <button>Edit</button>
-                      <button>Del</button>
+                      {/* <button>Edit</button>
+                      <button>Del</button> */}
                  </div>
                     </>
                 )
