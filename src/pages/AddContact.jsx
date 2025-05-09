@@ -23,11 +23,11 @@ export const AddContact = () => {
             <div className="col-8">
               {/* <form className="contact-form"> */}
               
-               <div class="mb-3">
-                  <label htmlFor="contactName" class="form-label">Full Name</label>
+               <div className="mb-3">
+                  <label htmlFor="contactName" className="form-label">Full Name</label>
                   <input 
                   type="text" 
-                  class="form-control" 
+                  className="form-control" 
                   id="contactName" 
                   placeholder="contact name" 
                   value={contactName}
@@ -40,12 +40,12 @@ export const AddContact = () => {
         <div className="row add-contact-row">
             <div className="col-2"></div>
             <div className="col-8">
-               <div class="mb-3">
-                 <label htmlFor="exampleFormControlInput1" class="form-label">Email address</label>
+               <div className="mb-3">
+                 <label htmlFor="emailAddress" className="form-label">Email address</label>
                  <input 
                   type="email" 
-                  class="form-control" 
-                  id="exampleFormControlInput1" 
+                  className="form-control" 
+                  id="emailAddress" 
                   placeholder="name@example.com" 
                   value={contactEmail}
                   onChange={e => setContactEmail(e.target.value)}/>
@@ -57,12 +57,12 @@ export const AddContact = () => {
         <div className="row add-contact-row">
             <div className="col-2"></div>
             <div className="col-8">
-                <div class="mb-3">
-                  <label htmlFor="contactPhone" class="form-label">Phone</label>
+                <div className="mb-3">
+                  <label htmlFor="contactPhone" className="form-label">Phone</label>
                   <input 
                   type="text" 
-                  class="form-control" 
-                  id="exampleFormControlInput1" 
+                  className="form-control" 
+                  id="contactPhone" 
                   placeholder="phone number" 
                   value={contactPhone}
                   onChange={e => setContactPhone(e.target.value)}/>
@@ -73,12 +73,12 @@ export const AddContact = () => {
         <div className="row add-contact-row">
             <div className="col-2"></div>
             <div className="col-8">
-                <div class="mb-3">
-                  <label htmlFor="contactAddress" class="form-label">Address</label>
+                <div className="mb-3">
+                  <label htmlFor="contactAddress" className="form-label">Address</label>
                   <input 
                   type="text" 
-                  class="form-control" 
-                  id="exampleFormControlInput1" 
+                  className="form-control" 
+                  id="contactAddress" 
                   placeholder="address" 
                   value={contactAddress}
                   onChange={e => setContactAddress(e.target.value)}/>

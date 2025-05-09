@@ -55,7 +55,7 @@ export const Contact = () => {
             :
             store.contacts.map((contact) => {
                 return (
-                    <>
+                  
 
                  <div className="card" key={contact.id}>
                     <ContactCard 
@@ -63,11 +63,12 @@ export const Contact = () => {
                           address={contact.address}
                           phone={contact.phone}
                           email={contact.email}
+                          id={contact.id}
                       />
                       {/* <button>Edit</button>
                       <button>Del</button> */}
                  </div>
-                    </>
+                
                 )
             })
         }
