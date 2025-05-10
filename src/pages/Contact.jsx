@@ -12,37 +12,16 @@ import { Link } from "react-router-dom";
 import useGlobalReducer from "../hooks/useGlobalReducer";
 import { ContactCard } from "../components/ContactCard";
 import { Navbar } from "../components/Navbar";
+import { fetchAllContacts } from "../lib/fetch";
 
 
 export const Contact = () => {
     const { store, dispatch } = useGlobalReducer();
     useEffect(() => {
-      fetchAllContacts();
+      fetchAllContacts(dispatch);
     }, [])
 
-    const fetchAllContacts = async() => {
-        
-        const response = await fetch ("https://playground.4geeks.com/contact/agendas/yuanM/contacts")
-        try {
-            if (!response.ok) {
-               throw new Error(response.status);
-                
-            }
-            const data = await response.json();
-            // console.log(data.contacts);
-            // we need to be able to save the contacts in the store 
-            // to accomplish this, we need to create a dispatch to set the contacts key in the store
-            dispatch({
-                //type is function call
-                type: 'fetchedContacts',
-                payload: data.contacts
-            })
-            
-        } catch (error) {
-            console.error("Error getting agenda. Check if URL is incorrect or if agenda doesn't exists.", error)
-        }
-    }
-
+   
 
     return (
         <>

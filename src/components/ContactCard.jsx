@@ -2,23 +2,12 @@
 
 import { Link } from "react-router-dom"
 import useGlobalReducer from "../hooks/useGlobalReducer"
+import { deleteContact } from "../lib/fetch";
+import { Contact } from "../pages/Contact";
 
 export const ContactCard = ({ name, address, phone, email, id }) => {
     const { store, dispatch } = useGlobalReducer();
-const DelContact = () => {
-  
-  
-   
-//  const newArray = store.contacts.filter(contact => contact.id!== id);
-//  dispatch({type: "SET_CONTACTS", payload:newArray});
-
-  
-   
-}
-   
-   
-   
-   
+ 
     return (
         <>
         <div className="contactCard-container d-flex justify-content-around mt-4">
@@ -56,7 +45,7 @@ const DelContact = () => {
           </div>
           <div className="modal-footer">
               <button type="button" className="btn btn-primary" data-bs-dismiss="modal">Oh NO!</button>
-              <button type="button" className="btn btn-secondary" onClick={DelContact}>YES Baby!</button>
+              <button type="button" className="btn btn-secondary" onClick={() => deleteContact(id , dispatch)}>YES Baby!</button>
           </div>
        </div>
       </div>

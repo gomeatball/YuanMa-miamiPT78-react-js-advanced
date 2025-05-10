@@ -35,8 +35,24 @@ export default function storeReducer(store, action = {}) {
          ...store,
          contacts: [...contactArray]
       }
-    
-     default:
+      case 'createdContact':
+        // get the newly created contact object from action.payload
+        const newContact = action.payload;
+      return {
+        ...store,
+        contacts: [...store.contacts, newContact]
+      }
+
+    case 'editContact':
+       break;
+
+    case 'deletedContact':
+        const { id } = action.payload;
+      return {
+        ...store,
+        contacts: store.contacts.filter(contact => contact.id !== id)
+      }
+    default:
       throw Error('Unknown action.');
   }    
-}
+} 

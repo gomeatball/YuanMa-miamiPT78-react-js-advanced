@@ -6,12 +6,18 @@
 // post fetch data to API
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { addContact } from "../lib/fetch";
+import useGlobalReducer from "../hooks/useGlobalReducer";
 
 export const AddContact = () => {
     const [contactName, setContactName] = useState("")
     const [contactAddress, setContactAddress] = useState("")
     const [contactEmail, setContactEmail] = useState("")
     const [contactPhone, setContactPhone] = useState("")
+
+    const { store, dispatch} = useGlobalReducer();
+
+   
 
     return (
     <>
@@ -87,7 +93,7 @@ export const AddContact = () => {
                <button 
                   type="submit"
                   className="btn btn-primary w-100"
-                  onClick={() => {}}>
+                  onClick={() => addContact(contactName, contactAddress, contactPhone, contactEmail, dispatch)}>
                 Save
                </button>
                <div>
