@@ -33,6 +33,7 @@ export const Contact = () => {
             <h1>Loading</h1>
             :
             store.contacts.map((contact) => {
+                console.log("Contact:", contact);
                 return (
                   
 
@@ -43,6 +44,7 @@ export const Contact = () => {
                           phone={contact.phone}
                           email={contact.email}
                           id={contact.id}
+                         
                       />
                       {/* <button>Edit</button>
                       <button>Del</button> */}
